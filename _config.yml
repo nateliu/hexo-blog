@@ -4,10 +4,11 @@
 
 # Site
 title: Nate Liu's World
-subtitle:
-description:
+subtitle: God helps those who help themselves.
+description: Spring Cloud, Docker, Java8, JDK,.NET, C#, CLR
+keywords: Spring Cloud, Docker, Java8, JDK,.NET, C#, CLR
 author: Nate Liu
-language:
+language: en # Support 简体中文（zh-CN），繁体中文（zh-TW），英语（en），法语（fr-FR），德语（de-DE），韩语 （ko）,西班牙语（es-ES）
 timezone:
 
 # URL
@@ -64,7 +65,7 @@ pagination_dir: page
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
 #theme: landscape
-theme: coney
+theme: BlueLake
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
@@ -76,3 +77,22 @@ server:
   port: 8761
   compress: true
   header: true
+  
+jsonContent:
+  meta: false
+  pages: false
+  posts:
+    title: true
+    date: true
+    path: true
+    text: true
+    raw: false
+    content: false
+    slug: false
+    updated: false
+    comments: false
+    link: false
+    permalink: false
+    excerpt: false
+    categories: false
+    tags: true
