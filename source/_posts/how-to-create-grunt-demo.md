@@ -31,3 +31,14 @@ git clone https://github.com/gruntjs/grunt-init-jquery.git ~/.grunt-init/jquery
 ``` bash
 $ grunt-init jquery
 ```
+
+### Step 4 run test
+``` bash
+$ grunt qunit
+```
+Running "qunit:files" (qunit) task
+Testing test/test.html ....OK
+>> 5 assertions passed (58ms)
+
+## Reference to offical website 
+[Getting Started](https://gruntjs.com/getting-started)
