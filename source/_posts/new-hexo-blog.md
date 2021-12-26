@@ -1,5 +1,7 @@
 ---
 title: New Hexo Blog
+date: 2021-12-21 11:31:31
+tags:
 ---
 Welcome to [Nate Liu's Blog](https://nateliu.github.io/)! This is step by step I created this blog with [Hexo](https://hexo.io/).
 ### Step 1 install git,nodejs
