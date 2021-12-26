@@ -219,8 +219,54 @@ export default function SideMenu() {
     )
 }
 ```
+### 8. Fix some issue for SideMenu
+Finished above 7 steps, the page should be display correctly, but it is weird, some menu should be in second level route, but it is in SideMenu. another thing is all the menu without icon. Let's fix those two things:
+for issue 1, we can identifiy the field pagepermission, check its 1 or not.
+```javascript
+    const checkPagePermission = (item) => {
+        return item.pagepermission === 1
+    }
+```
+> pagepermission is very important!!
+for issue 2, we can define an iconList to store icon, and use array[index] to get the icon.
+```javascript
+    const iconList = {
+    '/home':<HomeOutlined />,
+    '/user-manage':<UserOutlined />,
+    '/user-manage/list':<UserOutlined />,
+    '/right-manage':<CrownOutlined />,
+    '/right-manage/role/list':<CrownOutlined />,
+    '/right-manage/right/list':<CrownOutlined />,
+}
+```
+issue 3, The Home is no children, we do not need the expansed icon in the right, so we have to add children.length to check
+```javascript
+item.children?.length > 0 && checkPagePermission(item)
+```
+issue 4, the style is egly, we add some css in App.css
+```css
+@import '~antd/dist/antd.css';
 
+::-webkit-scrollbar {width: 5px;height: 5px;position:absolute}
+::-webkit-scrollbar-thumb {background-color: #1890ff;}
+::-webkit-scrollbar-track {background-color: #ddd;}
+```
 
+issue 5, focus the previous select menu if user refresh page.
+Menu component have SelectedKeys and defaultOpenKeys, we can set those two field to fix our issue.
+In Ant library, most of time, if field called defaultXXXX, that meant it is uncontrolled field, otherwise it will be useState for controlling.
+```javascript
+    const location = useLocation();
+
+    const selectKeys = [location.pathname]; 
+    const openKeys = ["/" + location.pathname.split("/")[1]];
+
+    ....
+
+    <Menu theme="dark" mode="inline" selectedKeys={selectKeys} defaultOpenKeys={openKeys}>
+                        {renderMenu(menuList)}
+                    </Menu>
+```
 
 
 
