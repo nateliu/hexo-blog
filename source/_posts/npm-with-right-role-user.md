@@ -1,5 +1,5 @@
 ---
-title: news-pubish-management(1)--right, role and user
+title: news-pubish-management(2)--right, role and user
 date: 2021-12-26 11:31:31
 tags:
 ---
