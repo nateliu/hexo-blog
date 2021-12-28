@@ -1,5 +1,5 @@
 ---
-title: news-pubish-management(4) news business
+title: news-pubish-management(4)--news business
 date: 2021-12-27 12:41:52
 tags:
 ---
