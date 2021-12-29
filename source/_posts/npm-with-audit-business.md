@@ -1,10 +1,10 @@
 ---
-title: news-pubish-management(4)--audit business
+title: news-pubish-management(5)--audit business
 date: 2021-12-27 20:37:52
 tags:
 ---
-The audit list should be display the user ownself, audiState should not equals to 0 and publishState should less than 1.
-### 1. Get back data in AuditList.js
+The audit list should be showing date the user ownself, audiState should not equals to 0 and publishState should less than 1.
+### 1. Get back data in `AuditList.js`
 copy from RightList.js and mofify as below
 ```javascript
 import { Button, Table, Tag } from 'antd';
@@ -279,7 +279,7 @@ export default function NewsCategory() {
     )
 }
 ```
-use table [editCell](https://ant-design.gitee.io/components/table-cn/#components-table-demo-edit-cell) for editing title
+use table [Table EditCell](https://ant-design.gitee.io/components/table/#components-table-demo-edit-cell) for editing title
 
 add components proeprty in Table, the components nees EditableRow and EditableCell, it is complex to read this document but need careful, at the end the NewsCategory should be looks like
 ```javascript

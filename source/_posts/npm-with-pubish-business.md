@@ -1,5 +1,5 @@
 ---
-title: news-pubish-management(5)--publish business
+title: news-pubish-management(6)--publish business
 date: 2021-12-28 11:46:42
 tags:
 ---
@@ -75,7 +75,7 @@ export default function Unpublished() {
 
 ```
 ### 2. Define a custom hook
-Because Published.js and Sunset.js are similar with Unpublish.js, only the publishState is difference. So we can define a custom hook.
+Because `Published.js` and `Sunset.js` are similar to `Unpublish.js`, only the publishState is difference. So we can define a custom hook.
 ```bash
 touch src/components/publish-manage/usePublish.js
 ```
@@ -217,3 +217,4 @@ export default function NewsPublish(props) {
 ```
 according the type, easy to peform Published.js and Sunset.js
 
+> Custom hook is important!

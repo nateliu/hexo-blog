@@ -1,9 +1,9 @@
 ---
-title: news-pubish-management(5)--manage state with redux
+title: news-pubish-management(7)--manage state with redux
 date: 2021-12-28 14:11:22
 tags:
 ---
-Next we focus on the state management, here we chose [Redux](https://redux.js.org/).
+Next we focus on the state management, here we use classic [Redux](https://redux.js.org/).
 ### 1. setup redux
 ```bash
 yarn add redux react-redux
@@ -17,7 +17,7 @@ touch src/redux/reducers/CollapsedReducer.js
  . State is read-only
  . Changes are made with pure functions
 
-### 2. Finish the collapsed in both TopHeader and SideMenu components.
+### 2. Finish the collapsed in both `TopHeader` and `SideMenu` components.
 CollapsedReducer.js
 ```javascript
 export const CollapsedReducer = (prevState = { isCollapsed: false }, action) => {
@@ -55,8 +55,8 @@ export default function App() {
 }
 
 ```
-Our SideMenu and TopHeader will use the store. so go to TopHeader first, because Topheader is publish the state.Its response is Dispatch the state to store.
-In TopHeader, we use connect to make TopHeader as child components, we can get value from parameter props.
+Our `SideMenu` and `TopHeader` will use the store. so go to `TopHeader` first, because `Topheader` is publish the state.Its response is `Dispatch` the state to store.
+In `TopHeader`, we use `connect` to make `TopHeader` as child components, we can get value from parameter of `props`.
 ```javascript
 import { connect } from 'react-redux';
 ...
@@ -109,7 +109,7 @@ const mapDispatchToProps = {
 
 export default connect(mapStateToProps,mapDispatchToProps)(TopHeader);
 ```
-when user click the icon in TopHeader, the workflow go to store, and store find out the CollapsedReducer, then excute the logic to change to new state. below are the CollapsedReducer.js content:
+when user click the icon in `TopHeader`, the workflow go to `store`, and `store` find out the `CollapsedReducer`, then excute the logic to change to new state. below are the `CollapsedReducer.js` content:
 ```javascript
 export const CollapsedReducer = (prevState = { isCollapsed: false }, action) => {
     // console.log(action);
@@ -124,7 +124,7 @@ export const CollapsedReducer = (prevState = { isCollapsed: false }, action) => 
     }
 }
 ```
-Back to SideMedu, SideMenu retrieve the state to collapse or expand himself. We also connect SideMenu first. It doesn't need Dispatch anything, so our change in SideMenu looks like:
+Back to `SideMedu`, `SideMenu` retrieve the state to collapse or expand himself. We also `connect` `SideMenu `first. It doesn't need `Dispatch` anything, so our changing in `SideMenu` looks like:
 ```javascript
 import { connect } from 'react-redux';
 ...

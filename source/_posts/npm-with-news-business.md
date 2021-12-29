@@ -5,8 +5,8 @@ tags:
 ---
 We have finished the permission, let's back to focus the busines of publish news.
 
-### 1. performing the src/views/sandbox/news-manage/NewsAdd.js
-We chose [Header](https://ant-design.gitee.io/components/page-header-cn/#header) to perform the title.
+### 1. performing the <span style="color:lightblue">src/views/sandbox/news-manage/NewsAdd.js</span>
+use [Header Basic](https://ant-design.gitee.io/components/page-header/#components-page-header-demo-basic) to perform the title.
 ```javascript
 import { PageHeader } from 'antd'
 ...
@@ -17,7 +17,7 @@ import { PageHeader } from 'antd'
                 subTitle="This is for adding news"
             />
 ```
-and we chose [Step](https://ant-design.gitee.io/components/steps-cn/#header) for the progress.
+and we use [Step Basic](https://ant-design.gitee.io/components/steps/#components-steps-demo-simple) for the progress.
 ```javascript
     <Steps current={current}>
                 <Step title="基本信息" description="新闻标题，新闻分类" />
@@ -25,7 +25,7 @@ and we chose [Step](https://ant-design.gitee.io/components/steps-cn/#header) for
                 <Step title="新闻提交" description="保存草稿或者提交审核" />
     </Steps>
 ```
-chose [Form](https://ant-design.gitee.io/components/form-cn/#components-form-demo-basic) for the input and select button
+chose [Form Basic](https://ant-design.gitee.io/components/form/#components-form-demo-basic) for the input and select button
 ```javascript
 <div style={{ marginTop: '50px' }}>
     <Form {...layout}>
@@ -44,10 +44,10 @@ chose [Form](https://ant-design.gitee.io/components/form-cn/#components-form-dem
     </Form>
 </div>
 ```
-above has finished the step 1, so go next to step 2
+above we called step 1, next to step 2
 
 ### 2. Add news content.
-We chose [react draft editor](https://github.com/jpuri/react-draft-wysiwyg) for edit news content.
+use [react draft editor](https://github.com/jpuri/react-draft-wysiwyg) for edit news content.
 ```bash
 yarn add react-draft-wysiwyg draft-js draftjs-to-html html-to-draftjs
 mkdir src/components/news-manage
@@ -78,7 +78,7 @@ export default function NewsEditor() {
 ```
 
 ### 3. Add save in progress 3
-use [Notification](https://ant-design.gitee.io/components/notification-cn/#header) in step 3
+use [Notification Basic](https://ant-design.gitee.io/components/notification/#components-notification-demo-basic) in step 3
 ```javascript
  const handleSave = auditState => {
         axios.post('/api/news', {

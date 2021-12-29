@@ -3,8 +3,8 @@ title: news-pubish-management(2)--right, role and user
 date: 2021-12-26 11:31:31
 tags:
 ---
-Today let back to perform the right and role in news-publish-management
-### 1. Use the [Table](https://ant-design.gitee.io/components/table-cn/) component in RightList.js
+Today let perform the right and role in news-publish-management
+### 1. Use the [Table Basic](https://ant-design.gitee.io/components/table/#components-table-demo-basic) component in <span style="color:lightblue">src/views/sandbox/right-manage/RightList.js</span>
 ```javascript
 import { Table } from 'antd';
 import axios from 'axios';
@@ -84,7 +84,7 @@ import {
 <Table dataSource={dataSource} columns={columns} pagination={{ pageSize: 5 }} />;
 ```
 
-### 5. use Tree to display children, it is pretty easy, change the useEffect to
+### 5. use Tree to display children, it is pretty easy, change the `useEffect` to
 ```javascript
     useEffect(() => {
         axios.get("/api/rights?_embed=children").then(res => {
@@ -94,9 +94,9 @@ import {
         })
     }, []);
 ```
-
-### 6. Get and Edit in RightList.js
-Because delete is danger,so we popup a [Model](https://ant-design.gitee.io/components/modal-cn/) information for confirming.
+> Here the `Tree` is not the `Tree` antd component, it is one of the column in `RightList`. 
+### 6. Get and Edit in `RightList.js`
+Because delete is danger,so we popup a [Model Basic](https://ant-design.gitee.io/components/modal/#components-modal-demo-basic) information for confirming.
 ```javascript
     //show confirm modal
     const confirmDelete = (item) => {
@@ -120,7 +120,7 @@ Because delete is danger,so we popup a [Model](https://ant-design.gitee.io/compo
         axios.delete(`/api/rights/${item.id}`);
     }
 ```
-above command can delete level 1 menu, but if we try to delete level 2 menu, then we wil encountered an issue says the data not found. How to delete level 2 menu? Let's look back the response data. We can get the first level data according the rightId, and then filter the children, and then send delete in children table.
+above command can delete level 1 menu, but when we try to delete level 2 menu, then we wil encountered an issue says the data not found. How to delete level 2 menu? Let's look back the response data. We can get the first level data according the rightId, and then filter the children, and then send delete in children table.
 ```javascript
     const realDelete = (item) => {
         // console.log(item);
@@ -158,7 +158,7 @@ Another button is Edit button, edit button control the page configuration. We wi
     }
 ```
 
-### 7. Use Table to perform role in RoleList.js
+### 7. Use Table to perform role in `RoleList.js`
 We already implemented the RightList, so we can refer that implement.
 ```javascript
 import { Button, Table, Modal } from 'antd';
@@ -230,9 +230,9 @@ export default function RoleList() {
     )
 }
 ```
-use [Tree](https://ant-design.gitee.io/components/tree-cn/#header) component to perform edit feature in RoleList.js
+use [Tree Basic](https://ant-design.gitee.io/components/tree/#components-tree-demo-basic) component to perform edit feature in `RoleList.js`
 
-Also we use [Modal](https://ant-design.gitee.io/components/modal-cn/#header) to popup the tree.
+Also we use [Modal Basic](https://ant-design.gitee.io/components/modal/#components-modal-demo-basic) to popup the tree.
 ```javascript
 <Modal title="Permisson Configuration" visible={isModalVisible} onOk={handleOk} onCancel={handleCancel}>
                 <Tree
@@ -285,7 +285,7 @@ Also we use [Modal](https://ant-design.gitee.io/components/modal-cn/#header) to 
         })
     }, []);  
 ```
-### 8. Use Table to perform user in UserList.js
+### 8. Use Table to perform user in `UserList.js`
 ```javascript
 import { Button, Table, Modal, Switch } from 'antd';
 import {
@@ -370,8 +370,8 @@ export default function UserList() {
     )
 }
 ```
-### 9. CRUD user in UserList.js
-use [Form](https://ant-design.gitee.io/components/form-cn/#components-form-demo-form-in-modal) component to perform this feature.
+### 9. CRUD user in `UserList.js`
+use [Form in Modal](https://ant-design.gitee.io/components/form/#components-form-demo-form-in-modal) component to perform this feature.
 ```javascript
 import { Button, Table, Modal, Switch, Form, Input, Select } from 'antd';
 import {
@@ -529,9 +529,9 @@ mkdir src/components/user-manage
 touch src/components/user-manage/UserForm.js
 ```
 Copy the Form section to this file.
-> use forwardRef for exporting UserForm.js for communitcating with UserList.js
+> use `forwardRef` for exporting `UserForm.js` for communicating with `UserList.js`
 
-create a ref in UserList.js
+create a `ref` in `UserList.js`
 ```javascript
 import React, { useRef } from 'react'
 ...
@@ -555,7 +555,7 @@ const addForm = useRef(null);
     <UserForm regionList={regionList} roleList={roleList} ref={addForm} />
 </Modal>    
 ```
-The UserForm.js we change the definition formation
+The `UserForm.js` we change the definition formation
 ```javascript
 const UserForm = forwardRef((props, ref) => {
     return (
@@ -588,7 +588,7 @@ const addFormOk = () => {
         })
     }
 ```
-Delete user in UserList.js
+Delete user in `UserList.js`
 ```javascript
    const realDelete = (item) => {
         // console.log(item);
@@ -596,7 +596,7 @@ Delete user in UserList.js
         axios.delete(`/api/users/${item.id}`);
     }
 ```
-Update user status in UserList.js
+Update user status in `UserList.js`
 ```javascript
         {
             title: '用户状态',
@@ -613,7 +613,7 @@ Update user status in UserList.js
         axios.patch(`/api/users/${item.id}`,{roleState:item.roleState});
     }
 ```
-Update user in UserList.js
+Update user in `UserList.js`
 It is very similar with addForm, so copy an updateForm modal.
 ```javascript
 omit

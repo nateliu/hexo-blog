@@ -1,44 +1,48 @@
 ---
-title: New Hexo Blog
+title: creating a new hexo blog
 date: 2021-12-21 11:31:31
 tags:
 ---
 Welcome to [Nate Liu's Blog](https://nateliu.github.io/)! This is step by step I created this blog with [Hexo](https://hexo.io/).
-### Step 1 install git,nodejs
-
-[Git](https://git-scm.com/downloads)
-[NodeJS](https://nodejs.org/en/download/)
-
+### Step 1 install Git and Node
+Official Website:<br/>
+[Git](https://git-scm.com/downloads)<br/>
+[Node](https://nodejs.org/en/download/)
+```bash
+brew install git
+brew install node
+```
 
 ### Step 2 install hexo
 ``` bash
-$ npm install hexo-cli -g
+npm install hexo-cli -g
 ```
 
 ### Step 3 initilize hexo-blog
 ``` bash
-$ hexo init hexo-blog
-$ cd hexo-blog
-$ npm install
-$ hexo server
+hexo init hexo-blog
+cd hexo-blog
+npm install
+hexo server
 ```
 
 ### Step 4 generate html pages
 ``` bash
-$ hexo generate 
+hexo generate 
 or
 hexo g
 ```
 
 ### Step 5 testing in local
 ``` bash
-$ hexo server 
-or hexo s
+hexo server 
+or 
+hexo s
 ```
 
 ### Step 6 deploy into github.io with One-command-deployment
 ``` bash
-$ npm install hexo-deployer-git --save
+npm install hexo-deployer-git --save
 ```
 modify _config.yml, go to the end and add following lines:
 ``` bash
@@ -50,9 +54,9 @@ deploy:
 
 ### Step 7 launch with following lines
 ``` bash
-$ hexo clean
-$ hexo generate
-$ hexo deploy
+hexo clean
+hexo generate
+hexo deploy
 ```
 
 ### Step 8 go to chrome to see the result.
@@ -64,9 +68,9 @@ My Hexo Blog: [My-Hexo-Blog](https://nateliu.github.io)
 ### Step 10 using GitHub actions automatically deploy hexo
 1. Generate public and private keys
 ``` bash
-$ cd hexo-blog
-$ git checkout main
-$ ssh-keygen -t rsa -b 4096 -C "jinliangliu@163.com" -f github-deploy-key -N ""
+cd hexo-blog
+git checkout main
+ssh-keygen -t rsa -b 4096 -C "jinliangliu@163.com" -f github-deploy-key -N ""
 ```
 Two files are generated in the directory:
 - <span style="color:red">github-deploy-key.pub</span> —Public key file
@@ -136,7 +140,7 @@ deploy:
   repo: git@github.com:nateliu/nateliu.github.io.git 
   branch: master
 ```
-> It likes Step 6 before mentioned, but update the <span style="color:red"> repo: </span>
+> It looks like Step 6 before mentioned, but update the <span style="color:red"> repo: </span>
 
 6. Verification
 Now the hexo-blog has been integrated with GitHub actions, push the code into main branch to automatically compile and deploy. specific

@@ -1,9 +1,9 @@
 ---
-title: news-pubish-management(6)--dashboard
+title: news-pubish-management(8)--dashboard
 date: 2021-12-28 17:09:10
 tags:
 ---
-We will use [Card](https://ant-design.gitee.io/components/card-cn/#header) and [List](https://ant-design.gitee.io/components/list-cn/#header) to perform a dashboard in NPM system.
+We will use [Card Basic](https://ant-design.gitee.io/components/card/#components-card-demo-basic) and [List Simple](https://ant-design.gitee.io/components/list/#components-list-demo-simple) to perform a dashboard in NPM system.
 
 ### 1. Go to Home.js
 src/views/sandbox/home/Home.js
@@ -165,7 +165,7 @@ const barRef = useRef()
 ...
 ```
 add pie chart
-we use [Drawer](https://ant-design.gitee.io/components/drawer-cn/#header) for popup. It is similar to bar chart.
+we use [Drawer Custom Placeholder](https://ant-design.gitee.io/components/drawer/#components-drawer-demo-placement) for popup. It is similar to bar chart.
 
 ### 3. The Home.js looks like:
 ```javascript

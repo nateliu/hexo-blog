@@ -1,6 +1,6 @@
 ---
-title: news-pubish-management(8)--Update and Fixing
-date: 2021-12-30 11:12:29
+title: news-pubish-management(11)--Update and Fixing
+date: 2021-12-29 11:12:29
 tags:
 ---
 Will update and fix issue in this document.

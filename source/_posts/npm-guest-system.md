@@ -1,5 +1,5 @@
 ---
-title: news-pubish-management(7)--guest system
+title: news-pubish-management(9)--guest system
 date: 2021-12-28 19:38:59
 tags:
 ---
@@ -20,7 +20,7 @@ import News from '../views/news/News'
 <Route path="/detail/:id" element={<Detail />} />
 ```
 ### 2. News component
-we use [PageHeader](https://ant-design.gitee.io/components/page-header-cn/#header) and [Card](https://ant-design.gitee.io/components/card-cn/#header) and [List](https://ant-design.gitee.io/components/list-cn/#header) to perform this feature.
+we use [PageHeader Basic](https://ant-design.gitee.io/components/page-header/#components-page-header-demo-basic) and [Card Basic](https://ant-design.gitee.io/components/card/#components-card-demo-basic) and [List Simple](https://ant-design.gitee.io/components/list/#components-list-demo-simple) to perform this feature.
 ```javascript
 import { PageHeader, Card, Col, Row, List } from 'antd';
 import React, { useEffect, useState } from 'react';
@@ -75,7 +75,7 @@ export default function News() {
 
 ```
 ### 3. Detail component
-copy from src/views/sandbox/news-manage/NewsPreviews.js and modify as below.
+copy from <span style="color:lightblue">src/views/sandbox/news-manage/NewsPreviews.js</span> and modify as below.
 ```javascript
 import { HeartTwoTone } from '@ant-design/icons';
 import { PageHeader, Descriptions } from 'antd'

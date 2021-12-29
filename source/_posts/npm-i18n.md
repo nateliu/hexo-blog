@@ -1,5 +1,5 @@
 ---
-title: news-pubish-management(8)--Internationalization
+title: news-pubish-management(10)--Internationalization
 date: 2021-12-29 08:13:13
 tags:
 ---

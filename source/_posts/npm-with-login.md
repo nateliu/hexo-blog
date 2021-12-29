@@ -4,7 +4,7 @@ date: 2021-12-27 08:39:53
 tags:
 ---
 It's time to implement a Login componnet.
-### 1. Login out in TopHeader.js
+### 1. Login out in `TopHeader.js`
 ```javascript
 import { useNavigate } from 'react-router';
 
@@ -16,8 +16,8 @@ const navigate = useNavigate();
 }}>Login out</Menu.Item>
 
 ```
-### 2. create Login component in src/views/login/Login.js
-we use for performing [particles](https://github.com/matteobruni/tsparticles/tree/main/components/react)
+### 2. create Login component in <span style="color:lightblue">src/views/login/Login.js</span>
+we use [particles](https://github.com/matteobruni/tsparticles/tree/main/components/react) for performing paticles.
 ```bash
 yarn add react-tsparticles
 
@@ -44,7 +44,7 @@ The css looks like below:
     color:white;
 }
 ```
-We use localStorage to store token for verifing and retrieving.
+We use `localStorage` to store token for verifing and retrieving.
 ```javascript
     const navigate = useNavigate();
 
@@ -64,11 +64,11 @@ We use localStorage to store token for verifing and retrieving.
     };
 ```
 
-### 3. Back to TopHeader.js to perform and add real information in there.
+### 3. Back to `TopHeader.js` to perform and add real information in there.
 ```javascript
 const { role: { roleName }, username } = JSON.parse(localStorage.getItem('token'));
 ```
-### 4. Checking the SideMenu, we should guaratee difference user has difference menu.
+### 4. Checking the `SideMenu`, we should guarantee difference user has difference menu.
 ```javascript
     const { role: { rights } } = JSON.parse(localStorage.getItem('token'));
 
@@ -77,7 +77,7 @@ const { role: { roleName }, username } = JSON.parse(localStorage.getItem('token'
     }
 ```
 
-### 5. locale admin only see his region user and himself, perform in UserList.js
+### 5. locale admin only see his region user and himself, perform in `UserList.js`
 ```javascript
     const { roleId, region, username } = JSON.parse(localStorage.getItem('token'));
     const roleObj = {
@@ -132,7 +132,7 @@ const { roleId, region } = JSON.parse(localStorage.getItem('token'));
         return roleObj[item.id] !== 'editor';
     }
 ```
-### 7. guratee deep link for difference user.
+### 7. Guarantee deep link for crashing permission in difference user.
 ```bash
 touch src/components/sandbox/NewsRouter.js
 ```
@@ -250,7 +250,7 @@ add permission for route checking and user checking
     const { role: { rights } } = JSON.parse(localStorage.getItem('token'));
 ```
 
-### 9. Add progress in NewsSandBox
+### 9. Add progress in `NewsSandBox`
 ```bash
 yarn add nprogress
 ```
