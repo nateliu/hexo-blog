@@ -97,6 +97,7 @@ export default function TodoList() {
                 state.todoList &&
                 state.todoList.map(todo => {
                     return <TodoItem
+                        key={todo.id}
                         todo={todo}
                         removeTodo={removeTodo}
                         toggleTodo={toggleTodo}
@@ -514,14 +515,14 @@ mkdir build
 touch build/webpack.config.js
 ```
 ```javascript webpack.config.js
-cconst path = require('path');
+cconst path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 
 module.exports = {
     entry: './src/index.tsx',
     output: {
-        filename: 'main.js',
+        filename: 'bundle.js',
         path: path.resolve(__dirname, 'dist'),
     },
     resolve: {
@@ -750,5 +751,5 @@ In my experience, it looks like
 ```
 > webpack official site is [here](https://webpack.js.org/concepts/), if has any problem, the better thing is to visit official site to get guideline.
 
-- Copy todo-app-ts files to this project. and it will result as same.
+- Copy todo-app-ts files to this project. and it will has same result.
 
