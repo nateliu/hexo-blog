@@ -100,6 +100,15 @@ const IndexRouter = (): ReactElement => {
 export default IndexRouter;
 ```
 > This method will export the whole `ChildInput` to `ParentPage`, for security reason, we just want export some functions to `ParentPage`, that we can use `useImperativeHandler`
+> Otherwise, for example user can write following code in `ParentPage`. Do you really want user write `onclick` event in `ParentPage` if you are the owner of `ChildInput`?
+```typescript
+    const handleClick = () => {
+        const node = myRef.current;
+        console.log(node?.value);
+        node?.focus();
+        node.onclick = function() { alert('have clicked me!') }
+    };
+```
 
 ### 2. Add `innerRef` and  `useImperativeHandle` in real inner component `InputWithLabel`
 
